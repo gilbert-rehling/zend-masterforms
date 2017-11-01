@@ -1,0 +1,15 @@
+<div class="jumbotron">
+    <h1><?php echo $this->title($this->pageTitle); ?></h1>
+    <?php if (isset($this->message) && is_array($this->message) ) : ?>
+        <?php echo $this->render('layout/partial/inline-messages', ['message' => $this->message]); ?>
+    <?php endif; ?>
+    <?php
+    ?>
+    <div class="masterforms clearfix">
+        <div class="row">
+            <div class="col-md-12">
+                <?php echo $content; ?>
+            </div>
+        </div>
+    </div>
+</div>

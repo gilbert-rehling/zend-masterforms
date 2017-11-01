@@ -1,0 +1,16 @@
+<div class="jumbotron">
+    <h1><?php echo $this->title($this->pageTitle); ?></h1>
+    <div class="masterforms clearfix">
+        <?php if (isset($this->message) && is_array($this->message) ) : ?>
+            <?php echo $this->render('masterforms/partial/inline-messages', ['message' => $this->message]); ?>
+        <?php endif; ?>
+        <?php
+            if ($this->message['error'] == 'Masterforms database has not been setup') {
+                // setup need to be run
+                $content = $this->translate("Please initialise the 'Setup' process to continue") . ".
+                    <br /><a title=\"" . $this->translate("Click this to start the Database setup") . "\" href=\"" . $this->url('masterforms/admin/setup') . "\">" . $this->translate("Database Setup") . "</a>";
+            }
+            echo $this->render('masterforms/masterforms/block/error', ['content' => $content]);
+        ?>
+    </div>
+</div>

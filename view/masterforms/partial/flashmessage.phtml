@@ -1,0 +1,7 @@
+<?php
+/* @var $flashMessenger \Zend\View\Helper\FlashMessenger | \Savve\View\Helper\FlashMessenger */
+$flashMessenger = $this->flashMessenger ();
+
+echo $flashMessenger->render ('error', array ('alert', 'alert-danger'));
+echo $flashMessenger->render ('success', array ('alert', 'alert-success'));
+echo $flashMessenger->render ('info', array ('alert', 'alert-info'));

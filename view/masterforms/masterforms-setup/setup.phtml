@@ -1,0 +1,113 @@
+<div class="jumbotron">
+    <h1><?php echo $this->title($this->pageTitle); ?></h1>
+    <div class="masterforms clearfix">
+        <h2><?php echo $subHeading; ?></h2>
+        <?php if (isset($this->message) && is_array($this->message) ) : ?>
+            <?php echo $this->render('masterforms/partial/inline-messages', ['message' => $this->message]); ?>
+        <?php endif; ?>
+        <div class="row">
+            <div class="col-md-12">
+                <h2><?php echo $this->translate('Database tables'); ?>:</h2>
+            <?php
+                echo $content;
+            ?>
+            </div>
+            <div class="col-md-12">
+                <h2><?php echo $this->translate('Administration Menu sample'); ?>:</h2>
+                <p>Zend allows you to create custom menu helpers. Therefore, we can only provide you with samples which you can drop into you current menu setup. Some modification may be required.</p>
+                <p>The samples below are for the Administration area for masterForms and should not be publicly visible.</p>
+                <p>You must use your ACL (Access Control Mechanism) to prevent public access to these URI's and ensure that these menu items are not displayed to non-authorised users.</p>
+                <p><string>Sample 1:</string></p>
+                <p>This sample can be used with the default 'Zend Sample' application code and can be added to the module/Application/view/layout/layout.phtml menu block.</p>
+                <p>
+                <?php
+                    echo '
+                    &lt;li class="dropdown"&gt;
+                        &lta class="dropdown-toggle" data-toggle="dropdown" href="#">&lt;?php echo &amp;this->translate(&#39Masterforms&#39); ?></a&gt;
+                        &ltul class="dropdown-menu">
+                            &ltli class=""&gt;
+                                &lta href="&lt;?php echo &amp;this->url(&#39masterforms/admin&#39) ?>">&lt;?php echo &amp;this->translate(&#39Welcome&#39); ?></a&gt;
+                            &lt/li&gt;
+                            &ltli class=""&gt;
+                                &lta href="&lt;?php echo &amp;this->url(&#39masterforms/admin/forms&#39) ?>">&lt;?php echo &amp;this->translate(&#39Forms&#39); ?></a&gt;
+                            &lt/li&gt;
+                            &ltli class=""&gt;
+                                &lta href="&lt;?php echo &amp;this->url(&#39masterforms/admin/categories&#39) ?>">&lt;?php echo &amp;this->translate(&#39Categories&#39); ?></a&gt;
+                            &lt/li&gt;
+                            &ltli class=""&gt;
+                                &lt;a href="&lt;?php echo &amp;this->url(&#39masterforms/admin/fields&#39) ?>">&lt;?php echo &amp;this->translate(&#39Fields&#39); ?></a&gt;
+                            &lt/li&gt;
+                            &ltli class=""&gt;
+                                &lta href="&lt;?php echo &amp;this->url(&#39masterforms/admin/fieldsets&#39) ?>">&lt;?php echo &amp;this->translate(&#39Fieldsets&#39); ?></a&gt;
+                            &lt/li&gt;
+                            &ltli class=""&gt;
+                                &lta href="&lt;?php echo &amp;this->url(&#39masterforms/admin/formfields&#39) ?>">&lt;?php echo &amp;this->translate(&#39Form Fields&#39); ?></a&gt;
+                            &lt/li&gt;
+                            &ltli class=""&gt;
+                                &lta href="&lt;?php echo &amp;this->url(&#39masterforms/admin/data&#39) ?>">&lt;?php echo &amp;this->translate(&#39Data&#39); ?></a&gt;
+                            &lt/li&gt;
+                            &ltli class=""&gt;
+                                &lta href="&lt;?php echo &amp;this->url(&#39masterforms/admin/help&#39) ?>">&lt;?php echo &amp;this->translate(&#39Help&#39); ?></a&gt;
+                            &lt/li&gt;
+                        &lt/ul&gt;
+                    &lt/li&gt;';
+                ?>
+                </p>
+                <p><strong>Sample 2:</strong></p>
+                <p>This sample can also be used in module/Application/view/layout/layout.phtml if you are using a MainMenu helper. In most cases Menu-Helpers requires the menu-items to be in an array format.</p>
+                <p>
+                <?php
+                    echo "
+                    [
+                        'id' => 'masterforms',
+                        'label' => &amp;this->translate(&#39Masterforms&#39),
+                        'link' => &amp;this->url('masterforms/admin'),
+                        'dropdown' => [
+                            [
+                                'id' => 'masterforms-admin',
+                                'label' => &amp;this->translate(&#39Welcome&#39),
+                                'link' => &amp;this->url('masterforms/admin')
+                            ],
+                            [
+                                'id' => 'masterforms-admin-forms',
+                                'label' => &amp;this->translate(&#39Forms&#39),
+                                'link' => &amp;this->url('masterforms/admin/forms')
+                            ],
+                            [
+                                'id' => 'masterforms-admin-categories',
+                                'label' => &amp;this->translate(&#39Categories&#39),
+                                'link' => &amp;this->url('masterforms/admin/categories')
+                            ],
+                            [
+                                'id' => 'masterforms-admin-fields',
+                                'label' => &amp;this->translate(&#39Fields&#39),
+                                'link' => &amp;this->url('masterforms/admin/fields')
+                            ],
+                            [
+                                'id' => 'masterforms-admin-fieldsets',
+                                'label' => &amp;this->translate(&#39Fieldsets&#39),
+                                'link' => &amp;this->url('masterforms/admin/fieldsets')
+                            ],
+                            [
+                                'id' => 'masterforms-admin-form-fields',
+                                'label' => &amp;this->translate(&#39Form Fields&#39),
+                                'link' => &amp;this->url('masterforms/admin/formfields')
+                            ],
+                            [
+                                'id' => 'masterforms-admin-data',
+                                'label' => &amp;this->translate(&#39Data&#39),
+                                'link' => &amp;this->url('masterforms/admin/data')
+                            ],
+                            [
+                                'id' => 'masterforms-admin-form-help',
+                                'label' => &amp;this->translate(&#39Help&#39),
+                                'link' => &amp;this->url('masterforms/admin/help')
+                            ]
+                        ]
+                    ]";
+                ?>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

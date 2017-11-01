@@ -1,0 +1,13 @@
+<?php if (isset($this->message['success'])) : ?>
+	<ul class="alert alert-success list-unstyled"><li><?php echo $this->message['success']; ?></li></ul>
+<?php elseif (isset($this->message['error'])) : ?>
+	<ul class="alert alert-danger list-unstyled"><li><?php echo $this->message['error']; ?></li></ul>
+<?php elseif (isset($this->message['info'])) : ?>
+	<ul class="alert alert-info list-unstyled"><li><?php echo $this->message['info']; ?></li></ul>
+<?php elseif (isset($this->message['danger'])) : ?>
+	<ul class="alert alert-danger list-unstyled"><li><?php echo $this->message['danger']; ?></li></ul>
+<?php elseif (isset($this->message['warning'])) : ?>
+	<ul class="alert alert-warning list-unstyled"><li><?php echo $this->message['warning']; ?></li></ul>
+<?php else : ?>
+	<ul class="alert alert-warning list-unstyled"><li><?php echo $this->message[0]; ?></li></ul>
+<?php endif ?>
